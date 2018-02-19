@@ -1,13 +1,10 @@
 package character.enemy;
 
-public abstract class EnemyBase {
-  private int Reward;
+import character.CharacterBase;
+import character.player.PlayerBase;
 
-  public int getReward() {
-    return Reward;
-  }
+public abstract class EnemyBase extends CharacterBase {
 
-  public void setReward(int reward) {
-    Reward = reward;
-  }
+  public abstract void reward(PlayerBase character);
+
 }

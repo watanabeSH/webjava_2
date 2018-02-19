@@ -17,6 +17,13 @@ public class PrintUtil {
   }
 
   /**
+   * お知らせ出力メソッド
+   */
+  public void battle(String text) {
+    System.out.println("  〇 " + text + " ...");
+  }
+
+  /**
    * 選択肢出力メソッド
    */
   public void select(String[] text) {
@@ -35,7 +42,7 @@ public class PrintUtil {
 
 
   public void inputPrefix() {
-    System.out.print("入力：");
+    System.out.print("　入力：");
   }
 
   /**

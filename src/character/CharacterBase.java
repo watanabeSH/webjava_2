@@ -1,13 +1,15 @@
 package character;
 
-public abstract class Character {
+import utility.PrintUtil;
+
+public abstract class CharacterBase {
   private String name;
   private int hitPoint;
   private int attack;
   private int defense;
   private int magicAttack;
   private int magicDefense;
-
+  PrintUtil printer = new PrintUtil();
 
   public String getName() {
     return name;
@@ -46,5 +48,25 @@ public abstract class Character {
     this.magicDefense = magicDefense;
   }
 
+  public void damage(int damage) {
+
+    if ( damage < 0 ) {
+      damage = 0;
+    }
+
+    this.hitPoint = this.hitPoint - damage;
+    this.printer.battle( name + "は、[" + damage + "] ダメージを受けた！");
+
+    if ( this.hitPoint < 0 ) {
+      this.hitPoint = 0;
+    }
+  }
+
+  public void heal (int heal) {
+    this.hitPoint = this.hitPoint - heal;
+    this.printer.battle( name + "は、[" + heal + "] 回復した！");
+  }
+
+  public abstract void action(CharacterBase chara);
 
 }
