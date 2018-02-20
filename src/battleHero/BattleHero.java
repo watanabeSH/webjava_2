@@ -61,17 +61,23 @@ public class BattleHero {
 
     do {
       printer.info("冒険に出かけましょう！");
-      printer.info("どこに向かう？");
+      printer.info("どこに向かう？（下に行くほど難易度は上がります）");
       printer.spaceln(1);
       printer.select(new String[]
           {"草原",
+           "森",
            "山",
+           "洞窟"
           });
-      String stageInput = scanner.getInputSelect(new String[] {"1","2"});
+      String stageInput = scanner.getInputSelect(new String[] {"1","2","3","4"});
       printer.spaceln(1);
       if (stageInput.equals("1")) {
         stage = new GrassField();
       } else if (stageInput.equals("2")) {
+        stage = new Mountain();
+      } else if (stageInput.equals("3")) {
+        stage = new Mountain();
+      } else if (stageInput.equals("4")) {
         stage = new Mountain();
       }
 

@@ -1,5 +1,6 @@
 package stage;
 
+import character.enemy.Goblin;
 import character.enemy.Slime;
 
 public class GrassField extends StageBase {
@@ -9,15 +10,7 @@ public class GrassField extends StageBase {
     addEnemy(new Slime());
     addEnemy(new Slime());
     addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
+    addEnemy(new Goblin());
+    addEnemy(new Goblin());
   }
 }
