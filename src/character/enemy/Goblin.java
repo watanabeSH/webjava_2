@@ -5,29 +5,29 @@ import character.CharacterBase;
 import character.player.PlayerBase;
 import utility.PrintUtil;
 
-public class Dragon extends EnemyBase{
+public class Goblin extends EnemyBase{
 
   PrintUtil printer = new PrintUtil();
   Random rnd = new Random();
 
-  public Dragon() {
-    setName("ドラゴン");
-    setHitPoint(500 + rnd.nextInt(50));
-    setAttack(100 + rnd.nextInt(15));
+  public Goblin() {
+    setName("ゴブリン");
+    setHitPoint(70 + rnd.nextInt(50));
+    setAttack(45 + rnd.nextInt(15));
     setDefense(20 + rnd.nextInt(15));
-    setMagicAttack(150+ rnd.nextInt(15));
-    setMagicDefense(20 + rnd.nextInt(15));
+    setMagicAttack(0+ rnd.nextInt(15));
+    setMagicDefense(10 + rnd.nextInt(15));
   }
 
   @Override
   public void reward(PlayerBase chara) {
     printer.battle(chara.getName() + "のステータスが上がった！");
-    chara.setAttack(chara.getAttack() + 10);
-    chara.setDefense(chara.getDefense() + 10);
-    chara.setMagicAttack(chara.getMagicAttack() + 10);
-    chara.setMagicDefense(chara.getMagicDefense() + 10);
+    chara.setAttack(chara.getAttack() + 3);
+    chara.setDefense(chara.getDefense() + 3);
+    chara.setMagicAttack(chara.getMagicAttack() + 3);
+    chara.setMagicDefense(chara.getMagicDefense() + 3);
 
-    int money = 1000;
+    int money = 100;
     printer.battle("[" + money + "] ゼニーを手に入れた！");
     chara.setMoney(chara.getMoney() + money);
 
@@ -41,8 +41,7 @@ public class Dragon extends EnemyBase{
       printer.battle(getName() + "の攻撃！");
       chara.damage(getAttack() - chara.getDefense());
     } else {
-      printer.battle(getName() + "のブレス！");
-      chara.damage(getMagicAttack() - chara.getMagicDefense());
+      printer.battle(getName() + "はニヤけている。");
     }
 
   }

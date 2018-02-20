@@ -8,14 +8,15 @@ import utility.PrintUtil;
 public class Slime extends EnemyBase{
 
   PrintUtil printer = new PrintUtil();
+  Random rnd = new Random();
 
   public Slime() {
     Random rnd = new Random();
     setName("スライム");
     setHitPoint(38 + rnd.nextInt(5));
-    setAttack(40 + rnd.nextInt(5));
+    setAttack(20 + rnd.nextInt(5));
     setDefense(5 + rnd.nextInt(5));
-    setMagicAttack(30 + rnd.nextInt(5));
+    setMagicAttack(20 + rnd.nextInt(5));
     setMagicDefense(5 + rnd.nextInt(5));
   }
 
@@ -35,7 +36,12 @@ public class Slime extends EnemyBase{
 
   @Override
   public void action(CharacterBase chara) {
-    printer.battle(getName() + "の攻撃！");
-    chara.damage(getAttack() - chara.getDefense());
+    int num = rnd.nextInt(10);
+    if( num <= 8 ) {
+      printer.battle(getName() + "の攻撃！");
+      chara.damage(getAttack() - chara.getDefense());
+    } else {
+      printer.battle(getName() + "はじっとしている。");
+    }
   }
 }

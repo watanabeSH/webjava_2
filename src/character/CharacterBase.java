@@ -63,7 +63,7 @@ public abstract class CharacterBase {
   }
 
   public void heal (int heal) {
-    this.hitPoint = this.hitPoint - heal;
+    this.hitPoint = this.hitPoint + heal;
     this.printer.battle( name + "は、[" + heal + "] 回復した！");
   }
 

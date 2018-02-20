@@ -99,6 +99,7 @@ public class BattleHero {
         return false;
       }
 
+      printer.spaceln(1);
       enemy.action(player);
 
       if (enemy.getHitPoint() == 0 ) {
@@ -109,6 +110,10 @@ public class BattleHero {
       } else if (player.getHitPoint() == 0 ) {
         return false;
       }
+
+     printer.battle("現在の" + player.getName() + "の体力" + player.getHitPoint());
+     printer.spaceln(1);
+
 
     } while(true);
   }

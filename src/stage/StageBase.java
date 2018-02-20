@@ -23,7 +23,7 @@ public abstract class StageBase {
 
   public EnemyBase encountEnemy() {
     Random rnd = new Random();
-    EnemyBase enemy = enemys.get(rnd.nextInt(enemys.size() -1));
+    EnemyBase enemy = enemys.get(rnd.nextInt(enemys.size()));
     printer.battle(enemy.getName()  + "に遭遇した！");
     return enemy;
   }

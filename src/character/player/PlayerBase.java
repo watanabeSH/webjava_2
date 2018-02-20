@@ -1,12 +1,16 @@
 package character.player;
 
+import java.util.Random;
 import character.CharacterBase;
 import utility.PrintUtil;
+import utility.ScannerUtil;
 
 public abstract class PlayerBase extends CharacterBase {
   private String job;
    private int money = 0;
   PrintUtil printer = new PrintUtil();
+  ScannerUtil scanner = new ScannerUtil();
+  Random rnd = new Random();
 
   public String getJob() {
     return job;
@@ -38,10 +42,45 @@ public abstract class PlayerBase extends CharacterBase {
     printer.println("〇--------------------------〇");
   }
 
+
   @Override
   public void action(CharacterBase chara) {
-    printer.battle(getName() + "の攻撃！");
-    chara.damage(getAttack() - chara.getDefense());
+
+    printer.battle(getName() + "のターンです。");
+
+    printer.select(new String[]
+        {"攻撃",
+         "魔法",
+         "回復"
+        });
+    String actInput = scanner.getInputSelect(new String[] {"1","2","3"});
+
+    if (actInput.equals("1")) {
+      if (rnd.nextInt(10) <= 8) {
+        printer.battle(getName() + "の攻撃！");
+        chara.damage(getAttack() - chara.getDefense());
+      } else {
+        printer.battle(getName() + "の渾身の攻撃！");
+        chara.damage(getAttack() * 2 - chara.getDefense());
+      }
+
+    } else if (actInput.equals("2")) {
+      if (rnd.nextInt(10) <= 8) {
+        printer.battle(getName() + "は魔法を放った！");
+        chara.damage(getMagicAttack() - chara.getMagicDefense());
+      } else {
+        printer.battle(getName() + "は全力の魔法を放った！");
+        chara.damage(getMagicAttack() * 2 - chara.getMagicDefense());
+      }
+
+    } else if (actInput.equals("3")) {
+      printer.battle(getName() + "は体力を回復した！");
+      if (rnd.nextInt(10) <= 7) {
+        this.heal(50);
+      } else {
+        printer.battle("しかし、うまく決まらなかった！");
+      }
+    }
   }
 
 }
