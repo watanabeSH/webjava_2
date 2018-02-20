@@ -7,7 +7,7 @@ import utility.PrintUtil;
 public abstract class StageBase {
   private String name;
   private ArrayList<EnemyBase> enemys = new ArrayList<EnemyBase>();
-  PrintUtil printer = new PrintUtil();
+  private PrintUtil printer = new PrintUtil();
 
   public String getName() {
     return name;

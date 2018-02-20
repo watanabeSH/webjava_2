@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ScannerUtil {
 
-  static PrintUtil printer = new PrintUtil();
+  private PrintUtil printer = new PrintUtil();
   private Scanner scanner;
 
   public ScannerUtil () {
