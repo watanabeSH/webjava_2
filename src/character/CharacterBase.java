@@ -1,6 +1,8 @@
 package character;
 
+import java.util.Random;
 import utility.PrintUtil;
+import utility.ScannerUtil;
 
 public abstract class CharacterBase {
   private String name;
@@ -9,7 +11,9 @@ public abstract class CharacterBase {
   private int defense;
   private int magicAttack;
   private int magicDefense;
-  PrintUtil printer = new PrintUtil();
+  protected PrintUtil printer = new PrintUtil();
+  protected ScannerUtil scanner = new ScannerUtil();
+  protected Random rnd = new Random();
 
   public String getName() {
     return name;

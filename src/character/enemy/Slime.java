@@ -3,12 +3,8 @@ package character.enemy;
 import java.util.Random;
 import character.CharacterBase;
 import character.player.PlayerBase;
-import utility.PrintUtil;
 
 public class Slime extends EnemyBase{
-
-  PrintUtil printer = new PrintUtil();
-  Random rnd = new Random();
 
   public Slime() {
     Random rnd = new Random();

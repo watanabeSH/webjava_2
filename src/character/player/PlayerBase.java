@@ -1,16 +1,10 @@
 package character.player;
 
-import java.util.Random;
 import character.CharacterBase;
-import utility.PrintUtil;
-import utility.ScannerUtil;
 
 public abstract class PlayerBase extends CharacterBase {
   private String job;
-   private int money = 0;
-  PrintUtil printer = new PrintUtil();
-  ScannerUtil scanner = new ScannerUtil();
-  Random rnd = new Random();
+  private int money = 0;
 
   public String getJob() {
     return job;

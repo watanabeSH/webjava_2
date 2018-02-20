@@ -1,17 +1,11 @@
 package character.enemy;
 
-import java.util.Random;
 import character.CharacterBase;
 import character.player.PlayerBase;
-import utility.PrintUtil;
 
 public class BonusSlime extends EnemyBase{
 
-  PrintUtil printer = new PrintUtil();
-  Random rnd = new Random();
-
   public BonusSlime() {
-    Random rnd = new Random();
     setName("ボーナススライム");
     setHitPoint(1);
     setAttack(0);

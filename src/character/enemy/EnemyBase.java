@@ -2,11 +2,8 @@ package character.enemy;
 
 import character.CharacterBase;
 import character.player.PlayerBase;
-import utility.PrintUtil;
 
 public abstract class EnemyBase extends CharacterBase {
-
-  PrintUtil printer = new PrintUtil();
 
   public abstract void reward(PlayerBase character);
 

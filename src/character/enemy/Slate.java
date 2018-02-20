@@ -1,14 +1,9 @@
 package character.enemy;
 
-import java.util.Random;
 import character.CharacterBase;
 import character.player.PlayerBase;
-import utility.PrintUtil;
 
 public class Slate extends EnemyBase{
-
-  PrintUtil printer = new PrintUtil();
-  Random rnd = new Random();
 
   public Slate() {
     setName("謎の石板");
@@ -35,7 +30,6 @@ public class Slate extends EnemyBase{
 
   @Override
   public void action(CharacterBase chara) {
-
     int num = rnd.nextInt(10);
     if( num <= 8 ) {
       printer.battle(getName() + "から光が放たれた！");

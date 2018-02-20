@@ -1,14 +1,9 @@
 package character.enemy;
 
-import java.util.Random;
 import character.CharacterBase;
 import character.player.PlayerBase;
-import utility.PrintUtil;
 
 public class Skelton extends EnemyBase{
-
-  PrintUtil printer = new PrintUtil();
-  Random rnd = new Random();
 
   public Skelton() {
     setName("スケルトン");
@@ -35,7 +30,6 @@ public class Skelton extends EnemyBase{
 
   @Override
   public void action(CharacterBase chara) {
-
     int num = rnd.nextInt(10);
     if( num <= 8 ) {
       printer.battle(getName() + "の攻撃！");
