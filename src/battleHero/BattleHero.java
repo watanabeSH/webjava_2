@@ -19,6 +19,8 @@ public class BattleHero {
 
   public static void main(String[] args) {
 
+    BattleHero battleHero = new BattleHero();
+
     printer.info("Battle Heroにようこそ！");
 
     // プレイヤー作成
@@ -85,13 +87,13 @@ public class BattleHero {
       printer.spaceln(1);
       enemy = stage.encountEnemy();
 
-    } while(battle(player,enemy));
+    } while(battleHero.battle(player,enemy));
 
-    gameOver(player);
+    battleHero.gameOver(player);
 
   }
 
-  private static boolean battle(PlayerBase player, EnemyBase enemy) {
+  private boolean battle(PlayerBase player, EnemyBase enemy) {
 
     do {
       player.action(enemy);
@@ -124,7 +126,7 @@ public class BattleHero {
     } while(true);
   }
 
-  private static void gameOver(PlayerBase player) {
+  private  void gameOver(PlayerBase player) {
     printer.alart("残念...");
     printer.alart("あなたはモンスターによって倒されてしまいました。");
     printer.spaceln(2);
