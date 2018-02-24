@@ -15,7 +15,7 @@ import utility.ScannerUtil;
 public class BattleHero {
 
   final static PrintUtil printer = new PrintUtil();
-  final static ScannerUtil scanner = new ScannerUtil();
+  final static ScannerUtil scanner = ScannerUtil.getInstance();
 
   public static void main(String[] args) {
 
@@ -135,6 +135,7 @@ public class BattleHero {
     printer.alart("------------ 最終結果 ------------");
     printer.spaceln(1);
     player.displayStatus();
+    scanner.close();
   }
 
 }

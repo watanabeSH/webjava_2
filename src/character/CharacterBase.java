@@ -12,7 +12,7 @@ public abstract class CharacterBase {
   private int magicAttack;
   private int magicDefense;
   protected PrintUtil printer = new PrintUtil();
-  protected ScannerUtil scanner = new ScannerUtil();
+  protected ScannerUtil scanner = ScannerUtil.getInstance();
   protected Random rnd = new Random();
 
   public String getName() {
