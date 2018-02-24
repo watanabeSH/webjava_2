@@ -2,6 +2,7 @@ package stage;
 import java.util.ArrayList;
 import java.util.Random;
 import character.enemy.EnemyBase;
+import character.player.PlayerBase;
 import utility.PrintUtil;
 
 public abstract class StageBase {
@@ -26,6 +27,39 @@ public abstract class StageBase {
     EnemyBase enemy = enemys.get(rnd.nextInt(enemys.size()));
     printer.battle(enemy.getName()  + "に遭遇した！");
     return enemy;
+  }
+
+  public boolean battle(PlayerBase player, EnemyBase enemy) {
+
+    do {
+      player.action(enemy);
+
+      if (enemy.getHitPoint() == 0 ) {
+        printer.info(enemy.getName() + "をたおした！");
+        enemy.reward(player);
+        player.displayStatus();
+        return true;
+      } else if (player.getHitPoint() == 0 ) {
+        return false;
+      }
+
+      printer.spaceln(1);
+      enemy.action(player);
+
+      if (enemy.getHitPoint() == 0 ) {
+        printer.info(enemy.getName() + "をたおした！");
+        enemy.reward(player);
+        player.displayStatus();
+        return true;
+      } else if (player.getHitPoint() == 0 ) {
+        return false;
+      }
+
+     printer.battle("現在の" + player.getName() + "の体力" + player.getHitPoint());
+     printer.spaceln(1);
+
+
+    } while(true);
   }
 
 }
