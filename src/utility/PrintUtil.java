@@ -42,7 +42,7 @@ public class PrintUtil {
 
 
   public void inputPrefix() {
-    System.out.print("　入力：");
+    System.out.print("　入力 >>> ");
   }
 
   /**

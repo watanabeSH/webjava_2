@@ -72,6 +72,7 @@ public class ScannerUtil {
         printer.spaceln(1);
       }
 
+      printer.spaceln(1);
     } while (!isOk);
 
     return input;
