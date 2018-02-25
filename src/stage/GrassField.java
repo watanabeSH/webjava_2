@@ -7,10 +7,7 @@ public class GrassField extends StageBase {
 
   public GrassField () {
     setName("草原");
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
+    addEnemy(new Slime(),3);
+    addEnemy(new Goblin(),2);
   }
 }

@@ -10,53 +10,10 @@ public class Forest extends StageBase {
 
   public Forest () {
     setName("森");
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Slime());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new BonusSlime());
-    addEnemy(new Dragon());
+    addEnemy(new Slime(),6);
+    addEnemy(new Goblin(),10);
+    addEnemy(new Skelton(),10);
+    addEnemy(new BonusSlime(),1);
+    addEnemy(new Dragon(),1);
   }
 }

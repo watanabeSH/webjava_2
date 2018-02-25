@@ -7,11 +7,7 @@ public class Cave extends StageBase {
 
   public Cave () {
     setName("洞窟");
-    addEnemy(new Dragon());
-    addEnemy(new Dragon());
-    addEnemy(new Dragon());
-    addEnemy(new Dragon());
-    addEnemy(new BonusSlime());
-    addEnemy(new BonusSlime());
+    addEnemy(new Dragon(),5);
+    addEnemy(new BonusSlime(),1);
   }
 }

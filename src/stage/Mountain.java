@@ -10,37 +10,10 @@ public class Mountain extends StageBase {
 
   public Mountain () {
     setName("山");
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Goblin());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Slate());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new Skelton());
-    addEnemy(new BonusSlime());
-    addEnemy(new BonusSlime());
-    addEnemy(new Dragon());
-    addEnemy(new Dragon());
+    addEnemy(new Goblin(), 6);
+    addEnemy(new Slate(),6);
+    addEnemy(new Skelton(),9);
+    addEnemy(new BonusSlime(),1);
+    addEnemy(new Dragon(),1);
   }
 }
