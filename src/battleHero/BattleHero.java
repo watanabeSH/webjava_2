@@ -13,7 +13,7 @@ public class BattleHero {
   final static PrintUtil printer = new PrintUtil();
   final static ScannerUtil scanner = ScannerUtil.getInstance();
 
-  public static void main(String[] args) {
+  public void gameStart() {
 
     BattleHero battleHero = new BattleHero();
 
