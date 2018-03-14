@@ -12,9 +12,10 @@ public class StageFactory {
   final static ScannerUtil scanner = ScannerUtil.getInstance();
 
   public StageBase create( ) {
-
+    printer.info("冒険に出かけましょう！");
+    printer.info("どこに向かう？（下に行くほど難易度は上がります）");
+    printer.spaceln(1);
     StageBase stage = null;
-
     printer.select(new String[]
         {"草原",
          "森",
@@ -32,7 +33,6 @@ public class StageFactory {
     } else if (stageInput.equals("4")) {
       stage = new Mountain();
     }
-
     return stage;
   }
 }

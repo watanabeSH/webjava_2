@@ -19,9 +19,9 @@ public abstract class StageBase {
   }
 
   public void addEnemy(EnemyBase enemy, int num) {
-  for (int i = 0 ; i<= num ; i++) {
-    enemys.add(enemy);
-  }
+    for (int i = 0 ; i<= num ; i++) {
+      enemys.add(enemy);
+    }
   }
 
   public EnemyBase encountEnemy() {
@@ -29,6 +29,12 @@ public abstract class StageBase {
     EnemyBase enemy = enemys.get(rnd.nextInt(enemys.size()));
     printer.battle(enemy.getName()  + "に遭遇した！");
     return enemy;
+  }
+
+  public boolean go(PlayerBase player) {
+    printer.info(player.getName() +"は" + getName() + "に向かった。");
+    printer.spaceln(1);
+    return battle(player, encountEnemy());
   }
 
   public boolean battle(PlayerBase player, EnemyBase enemy) {

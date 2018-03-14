@@ -1,6 +1,5 @@
 package battleHero;
 
-import character.enemy.EnemyBase;
 import character.player.PlayerBase;
 import factory.PlayerFactory;
 import factory.StageFactory;
@@ -26,20 +25,9 @@ public class BattleHero {
     // ステージ選択
     StageFactory sf = new StageFactory();
     StageBase stage = null;
-    EnemyBase enemy = null;
-
     do {
-      printer.info("冒険に出かけましょう！");
-      printer.info("どこに向かう？（下に行くほど難易度は上がります）");
-      printer.spaceln(1);
-
       stage = sf.create();
-
-      printer.info(player.getName() +"は" + stage.getName() + "に向かった。");
-      printer.spaceln(1);
-      enemy = stage.encountEnemy();
-
-    } while(stage.battle(player,enemy));
+    } while(stage.go(player));
 
     battleHero.gameOver(player);
 
